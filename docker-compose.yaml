@@ -1,0 +1,12 @@
+services:
+  chatbot:
+    image: paitrick:1.0
+    ports:
+      - "8000:8000"
+    environment:
+      - LLM_API_SERVER=${LLM_API_SERVER}
+      - EMBEDDING_MODEL_NAME=${EMBEDDING_MODEL_NAME}
+      - DOCUMENTS_PATH=${DOCUMENTS_PATH}
+    volumes:
+      - ./prompt_template.txt:/app/prompt_template.txt
+      - ./content:/app/content

@@ -18,6 +18,8 @@ load_dotenv()
 
 LLM_API_SERVER = os.getenv('LLM_API_SERVER')
 
+LLM_API_KEY = os.getenv('LLM_API_KEY')
+
 EMBEDDING_MODEL_NAME = os.getenv('EMBEDDING_MODEL_NAME')
 
 DOCUMENTS_PATH = os.getenv('DOCUMENTS_PATH', 'content')
@@ -54,7 +56,7 @@ async def query_llm():
     llm = ChatOpenAI(temperature=0,
                      # local llama.cpp-server,
                      openai_api_base=LLM_API_SERVER,
-                     openai_api_key='not_needed',
+                     openai_api_key=LLM_API_KEY,
                      )
 
     conversation_memory = ConversationBufferMemory(memory_key='chat_history',

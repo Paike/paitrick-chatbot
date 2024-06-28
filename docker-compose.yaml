@@ -1,6 +1,6 @@
 services:
   chatbot:
-    image: paitrick:1.0
+    image: thegenuinedockeruser/paitrick:latest
     ports:
       - "8000:8000"
     environment:
